@@ -147,7 +147,7 @@ class RENDER_OT_CustomAction(bpy.types.Operator):
                         rendered_images.append(image)
                     
                 # レンダリング終了後、結合スクリプトを実行
-                subprocess.run(['python', get_combine_script_path(), *rendered_images, os.path.join(output_path, f'{action.name}.png')])
+                subprocess.run([sys.executable, get_combine_script_path(), *rendered_images, os.path.join(output_path, f'{action.name}.png')])
                 
 
         return {'FINISHED'}
